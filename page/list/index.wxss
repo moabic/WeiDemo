@@ -1,0 +1,93 @@
+/* page/list/index.wxss */
+page {
+    background-color:rgb(233, 227, 227);
+}
+.first-block {
+    padding: 30rpx 20rpx;
+    background-color:#fff;
+    margin-top:20rpx;
+}
+.first-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title-one {
+    font-size:40rpx;
+    letter-spacing: 6rpx;
+}
+
+.title-three {
+    color:#666;
+    font-size:32rpx;
+    margin-top:20rpx;
+}
+.patuer {
+    width:710rpx;
+    margin-top:20rpx;
+}
+
+.first-bottom {
+    margin-top:30rpx;
+    width:19em;
+}
+
+.active {
+    border:2rpx solid #312f2f;
+    margin-right:20rpx;
+    padding:10rpx;
+}
+.first-bottom-t {
+    margin-top:50rpx;
+}
+
+/* 第二块 */
+.second-block,.third-block {
+    background-color:#fff;
+    margin-top:30rpx;
+    padding:30rpx 0;
+}
+.second-top {
+    display: flex;
+    align-items: center;
+}
+.second-log {
+    width:60rpx;
+    height:60rpx;
+    margin-left:20rpx;
+    border-radius: 50%;
+}
+.second-title {
+    margin-left:30rpx;
+    letter-spacing: 3rpx;
+}
+.second-logo {
+    width:750rpx;
+    margin-top:30rpx;
+}
+.second-content {
+    display: flex;
+    justify-content: center;
+}
+.second-content-title {
+    margin-top:30rpx;
+}
+.second-bottom {
+    display: flex;
+    justify-content: center;
+    margin:50rpx 30rpx;
+}
+.second-left {
+    border:2rpx solid black;
+    padding:10rpx;
+}
+.second-right-wrapper {
+    width:400rpx;
+    margin-left:30rpx;
+    text-align: right;
+}
+.second-right {
+    margin-right:20rpx;
+}
+
+/* 第三块 */

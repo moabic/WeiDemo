@@ -1,0 +1,14 @@
+<!--page/inside/index.wxml-->
+<!-- <text>page/inside/index.wxml</text> -->
+<view class="content">
+    <view class="pactcher">
+        <image src="/image/tab.jpg" class="pactcher_logo" mode="widthFix"/>
+        <text class="title">是否要卸下残红熄灭骄纵才会被施以恩宠也曾是朱砂心口月光床头杯一腔热血孤勇</text>        
+    </view>
+    <view class="bottom">
+        <text space="nbsp">---既生厌 - 县骨</text>
+    </view>
+    <view class="next">
+        <text class="next-page" bind:tap="jumpTwo">下一页</text>
+    </view>
+</view>

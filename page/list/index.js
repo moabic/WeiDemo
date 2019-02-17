@@ -1,4 +1,4 @@
-// page/index/index.js
+// page/list/index.js
 Page({
 
   /**
@@ -7,12 +7,7 @@ Page({
   data: {
 
   },
-  // 跳转第一个页面
-  jump:function() {
-    wx.navigateTo({
-      url:'/page/inside/index'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

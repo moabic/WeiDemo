@@ -1,5 +1,7 @@
 {
   "pages": [
-    "page/index/index"
+    "page/index/index",
+    "page/inside/index",
+    "page/list/index"
   ]
 }

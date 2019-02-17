@@ -2,6 +2,7 @@
 <!-- <text>page/index/index.wxml</text> -->
 <view class="content">
     <image src="/image/cat1.jpg" class="portrait"/>
-    <text class="name" decode="{{true}}">孙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;涛</text>
-    <text class="welcome">欢迎来到我的小程序</text>
+    <text class="name" space="ensp">孙        涛</text>
+    <text class="welcome" bind:tap="jump">欢迎来到我的小程序</text>
 </view>
+
