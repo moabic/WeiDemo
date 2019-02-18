@@ -3,23 +3,20 @@
     <view class="first-block">
         <view class="first-top">
             <text class="title-one">十月七日</text>
-            <text class="title-two">_________</text>
             <text class="title-three">点评人：许子东访谈，研究自己，才有价值</text>
         </view>
         <view class="first-conter">
             <image src="/image/one.jpg" class="patuer" mode="widthFix"/>
         </view>
         <view class="first-bottom">
-            <text class="active">.</text>
-            <text class="active">女性穿搭</text>
-            <text class="active">男性穿搭</text>
-            <text class="active">心理</text>  
-             <view class="first-bottom-t">
-                <text class="active">深度阅读</text>
-                <text class="active">人生整理术</text>
-                <text class="active">读书</text>
-                <text class="active">日韩剧</text>
-            </view>          
+            <text >+</text>
+            <text >女性穿搭</text>
+            <text >男性穿搭</text>
+            <text >心理</text>   
+            <text >深度阅读</text>
+            <text >人生整理术</text>
+            <text >读书</text>
+            <text >日韩剧</text>
         </view>
        
     </view>
@@ -37,11 +34,10 @@
         <view class="second-bottom">
             <text class="second-left">男性穿搭</text>
             <view class="second-right-wrapper">
-                <text class="second-right">...</text>
-                <text class="second-right">转发</text>
-                <text class="second-right">收藏</text>
+                <image src="/image/yinyong.jpg" mode="widthFix"/>
+                <image src="/image/zhuanfa.jpg" mode="widthFix" />
+                <image src="/image/shoucang.jpg" mode="widthFix" />
             </view>
-            
         </view>
     </view>
     <view class="third-block">
@@ -56,14 +52,37 @@
             <text class="second-content-title">三毛: 不雕琢痛苦，不敷衍生活</text>
         </view>
         <view class="second-bottom">
-            <text class="second-left">读书</text>
-        <view class="second-right-wrapper">
-            <text class="second-right">...</text>
-            <text class="second-right">转发</text>
-            <text class="second-right">收藏</text>
+            <text class="second-left">修身</text>
+       <view class="second-bottom">
+            <view class="second-right-wrapper">
+                <image src="/image/yinyong.jpg" mode="widthFix"/>
+                <image src="/image/zhuanfa.jpg" mode="widthFix" />
+                <image src="/image/shoucang.jpg" mode="widthFix" />
+            </view>
         </view>
         </view>
     </view>
-    <view class="fourth-block"></view>
+    <view class="fourth-block">
+        <view class="second-top">
+            <image src="/image/cat4.jpg" class="second-log" />
+            <text class="second-title">pull等8人关注了</text>
+        </view>
+        <view >
+            <image class="second-logo" src="/image/two.jpg" mode="widthFix"/>
+        </view>
+        <view class="second-content">
+            <text class="second-content-title">三毛: 不雕琢痛苦，不敷衍生活</text>
+        </view>
+        <view class="second-bottom">
+            <text class="second-left">生活</text>
+            <view class="second-bottom">
+                <view class="second-right-wrapper">
+                    <image src="/image/yinyong.jpg" mode="widthFix"/>
+                    <image src="/image/zhuanfa.jpg" mode="widthFix" />
+                    <image src="/image/shoucang.jpg" mode="widthFix" />
+                </view>
+            </view>
+        </view>
+    </view>
 </view>
 
