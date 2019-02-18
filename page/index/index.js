@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    array:[{
+      name: 'st'
+    },{
+      age : 20
+    }],
+    code:true
   },
   // 跳转第一个页面
   jump:function() {

@@ -1,86 +1,40 @@
 <!--page/list/index.wxml-->
-<view class="wrapper">
+
+
+<view class="wrapper" >
     <view class="first-block">
         <view class="first-top">
-            <text class="title-one">十月七日</text>
-            <text class="title-three">点评人：许子东访谈，研究自己，才有价值</text>
+            <text class="title-one">{{recommend.date}}</text>
+            <text class="title-three">{{recommend.title}}</text>
         </view>
         <view class="first-conter">
-            <image src="/image/one.jpg" class="patuer" mode="widthFix"/>
+            <image src="{{imgSrc}}" class="patuer" mode="widthFix"/>
         </view>
         <view class="first-bottom">
             <text >+</text>
-            <text >女性穿搭</text>
-            <text >男性穿搭</text>
-            <text >心理</text>   
-            <text >深度阅读</text>
-            <text >人生整理术</text>
-            <text >读书</text>
-            <text >日韩剧</text>
+            <text wx:for="{{markType}}" wx:key="">{{item.type}}</text>
         </view>
        
     </view>
-    <view class="second-block">
+    <view class="second-block" wx:for="{{articleList}}" wx:key="">
         <view class="second-top">
-            <image src="/image/cat4.jpg" class="second-log" />
-            <text class="second-title">pull等8人关注了</text>
+            <image src="{{imgSrc}}" class="second-log" />
+            <text class="second-title">pull等{{item.markCount}}人关注了</text>
         </view>
         <view >
             <image class="second-logo" src="/image/for.jpg" mode="widthFix"/>
         </view>
         <view class="second-content">
-            <text class="second-content-title">秋季衬衫没错？中了这几点就白买了</text>
+            <text class="second-content-title">{{item.articleTitle}}</text>
         </view>
         <view class="second-bottom">
-            <text class="second-left">男性穿搭</text>
+            <text class="second-left">{{item.articleType}}</text>
             <view class="second-right-wrapper">
-                <image src="/image/yinyong.jpg" mode="widthFix"/>
-                <image src="/image/zhuanfa.jpg" mode="widthFix" />
-                <image src="/image/shoucang.jpg" mode="widthFix" />
-            </view>
-        </view>
-    </view>
-    <view class="third-block">
-        <view class="second-top">
-            <image src="/image/cat4.jpg" class="second-log" />
-            <text class="second-title">pull等8人关注了</text>
-        </view>
-        <view >
-            <image class="second-logo" src="/image/three.jpg" mode="widthFix"/>
-        </view>
-        <view class="second-content">
-            <text class="second-content-title">三毛: 不雕琢痛苦，不敷衍生活</text>
-        </view>
-        <view class="second-bottom">
-            <text class="second-left">修身</text>
-       <view class="second-bottom">
-            <view class="second-right-wrapper">
-                <image src="/image/yinyong.jpg" mode="widthFix"/>
-                <image src="/image/zhuanfa.jpg" mode="widthFix" />
-                <image src="/image/shoucang.jpg" mode="widthFix" />
-            </view>
-        </view>
-        </view>
-    </view>
-    <view class="fourth-block">
-        <view class="second-top">
-            <image src="/image/cat4.jpg" class="second-log" />
-            <text class="second-title">pull等8人关注了</text>
-        </view>
-        <view >
-            <image class="second-logo" src="/image/two.jpg" mode="widthFix"/>
-        </view>
-        <view class="second-content">
-            <text class="second-content-title">三毛: 不雕琢痛苦，不敷衍生活</text>
-        </view>
-        <view class="second-bottom">
-            <text class="second-left">生活</text>
-            <view class="second-bottom">
-                <view class="second-right-wrapper">
-                    <image src="/image/yinyong.jpg" mode="widthFix"/>
+                <image src="/image/yinyong.jpg" mode="widthFix" bind:tap="chufa" data-articleType="{{item.articleType}}" class="yinyong"/>
+                <button open-type="share">
                     <image src="/image/zhuanfa.jpg" mode="widthFix" />
-                    <image src="/image/shoucang.jpg" mode="widthFix" />
-                </view>
+                </button>
+                <image src="/image/shoucang.jpg" mode="widthFix" />
             </view>
         </view>
     </view>

@@ -1,5 +1,6 @@
 <!--page/index/index.wxml-->
 <!-- <text>page/index/index.wxml</text> -->
+
 <view class="content">
     <image src="/image/cat1.jpg" class="portrait"/>
     <text class="name" space="ensp">孙        涛</text>
