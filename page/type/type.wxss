@@ -1,53 +1,32 @@
+/* page/type/type.wxss */
 /* page/list/index.wxss */
 page {
     background-color:rgb(233, 227, 227);
 }
-.first-block {
-    padding: 30rpx 20rpx;
+.newimg {
+    width:750rpx;
+}
+.parent {
+    width:600rpx;
+    height:200rpx;
     background-color:#fff;
-    margin-top:20rpx;
-}
-.first-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.title-one {
-    font-size:40rpx;
-    letter-spacing: 6rpx;
     position: relative;
-    padding-bottom:20rpx;
+    bottom:100rpx;
+    left:75rpx;
+    padding:20rpx 20rpx;
 }
-.title-one::after {
-    position: absolute;
-    left:46rpx;
-    bottom:0;
-    display:block;
-    content:"";
-    width:100rpx;
-    height:3rpx;
-    background-color:black;
+.parent text {
+    font-size:50rpx;
 }
-
-.patuer {
-    width:710rpx;
+.parent_zhuanfa {
+    position: relative;
+    left:450rpx;
+    bottom:-60rpx;
+    width:150rpx;
+    display: flex;
+    justify-content: space-between;
     margin-top:20rpx;
 }
-
-.first-bottom {
-    margin-top:30rpx;
-}
-.first-bottom text {
-    border:2rpx solid #000;
-    padding:10rpx 20rpx;
-    display: inline-block;
-    margin:20rpx 20rpx;
-}
-.first-bottom text:first-child {
-    background-color:#000;
-    color:#fff;
-}
-
 /* 第二块 */
 .second-block{
     background-color:#fff;
@@ -86,10 +65,7 @@ page {
     justify-content: space-between;
     padding:10rpx 20rpx;
 }
-.second-left {
-    border:2rpx solid black;
-    padding:10rpx;
-}
+
 
 .second-right-wrapper {
     width:250rpx;
@@ -97,7 +73,7 @@ page {
     justify-content: space-between;
     margin-top:20rpx;
 }
-.second-right-wrapper image {
+.second-right-wrapper image ,.parent image{
     width:40rpx;
     height:40rpx;
     margin-right: 20rpx;
@@ -106,10 +82,10 @@ page {
     position: relative;
     bottom:-5rpx;
 }
-.second-right-wrapper button::after{
+.second-right-wrapper button::after,.parent_zhuanfa button::after{
     border:none;
 }
-.second-right-wrapper button {
+.second-right-wrapper button,.parent_zhuanfa button {
     display: flex;
     width:70rpx;
     height:40rpx;

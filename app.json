@@ -1,8 +1,8 @@
 {
   "pages": [
     "page/list/index",
-    "page/index/index",
-    "page/inside/index"
-    
+    "page/type/type",
+    "page/inside/index",
+    "page/index/index"
   ]
 }

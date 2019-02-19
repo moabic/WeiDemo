@@ -1,30 +1,25 @@
-// page/list/index.js
+var request = require('../../util/uitl.js');
+
 Page({
+
+
+
+  // page/list/index.js
+
 
   /**
    * 页面的初始数据
    */
   data: {
-      imgSrc: '/image/one.jpg',
-      listLike: {
-      }
-     
+      imgSrc: '/image/one.jpg'
   },
   jumppages:function(e) {
     var index = e.currentTarget.dataset.typeid;
     wx.navigateTo({
       url: '/page/type/type?typeId=' + index
     })
-    // wx.request({
-    //   url: 'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getArticleTypeList',
-    //   success:function(res) {
-    //     console.log(res)
-    //   }
-    // })
-
   },
   onLinstTop: function(e) {
-    // console.log(e)
     var list = e.currentTarget.dataset.articlelist;
     var listLike = this.data.listLike;
     var islist = listLike[list]
@@ -32,14 +27,29 @@ Page({
     this.setData({
       listLike: listLike
     })
-    console.log(listLike)
+ 
     wx.setStorageSync('listLike',listLike)
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var index = options.typeId;
+    var that = this;
 
+    request({
+      url: '/getArticleTypeTitleInfo/' + index,
+      success: function(res) {
+        var imgsrc = res.imgSrc;
+        var font = 1;
+        var title = res.title;
+        that.setData({
+          limitRemaining: font + '天前',
+          newImgSrc: imgsrc,
+          title: title
+        })
+      }
+    })
 
     this.ongetHome();
     var listLike = wx.getStorageSync('listLike');
@@ -51,12 +61,12 @@ Page({
     })
     
   },
+  
   ongetHome: function() {
     var self = this;
     wx.request({
       url: 'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/home',
       success: function(res) {
-        console.log(res.data.articleList[0].articleImgSrc)
         self.setData({
           recommend: res.data.recommend,
           markType: res.data.markType,
@@ -70,7 +80,7 @@ Page({
     wx.showActionSheet({
       itemList: ['内容过期了','内容和'+ font + '不相关','不再显示来自' + font + '阅读的内容'],
       success:function (res) {
-       
+        
       }
     })
   },

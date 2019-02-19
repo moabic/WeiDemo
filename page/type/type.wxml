@@ -1,20 +1,17 @@
-<!--page/list/index.wxml-->
-
+<!--page/type/type.wxml-->
 
 <view class="wrapper" >
-    <view class="first-block">
-        <view class="first-top">
-            <text class="title-one">{{recommend.date}}</text>
-            <text class="title-three">{{recommend.title}}</text>
+    <view >
+        <image src="{{newImgSrc}}" class="newimg" mode="widthFix"/>
+        <view class="parent">
+            <text >{{title}}</text>
+            <view class="parent_zhuanfa">
+                <image src="/image/yinyong.jpg" mode="widthFix" bind:tap="chufa" data-articleType="{{item.articleType}}" class="yinyong"/>
+                <button open-type="share">
+                    <image src="/image/zhuanfa.jpg" mode="widthFix" />
+                </button>
+            </view>
         </view>
-        <view class="first-conter">
-            <image src="{{imgSrc}}" class="patuer" mode="widthFix"/>
-        </view>
-        <view class="first-bottom">
-            <text >+</text>
-            <text wx:for="{{markType}}" bind:tap="jumppages" data-typeId="{{item.typeId}}" wx:key="">{{item.type}}</text>
-        </view>
-       
     </view>
     <view class="second-block" wx:for="{{articleList}}" wx:key="">
         <view class="second-top">
@@ -28,7 +25,7 @@
             <text class="second-content-title">{{item.articleTitle}}</text>
         </view>
         <view class="second-bottom">
-            <text class="second-left">{{item.articleType}}</text>
+            <text class="second-left">{{limitRemaining}}</text>
             <view class="second-right-wrapper">
                 <image src="/image/yinyong.jpg" mode="widthFix" bind:tap="chufa" data-articleType="{{item.articleType}}" class="yinyong"/>
                 <button open-type="share">
@@ -40,4 +37,3 @@
         </view>
     </view>
 </view>
-
