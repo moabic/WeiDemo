@@ -5,12 +5,12 @@ function request (params) {
         url: baseUrl + params.url,
         success: function (res) {
             if(res.data.code === 0) {
-                params.success(res.data.data)
+                params.success(res)
             } else {
                 errorShow()
             }
         },
-        fill: function() {
+        fail: function() {
             errorShow()
         }
     })

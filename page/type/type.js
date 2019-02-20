@@ -30,6 +30,13 @@ Page({
  
     wx.setStorageSync('listLike',listLike)
   },
+  jumpArticle: function (e) {
+    var id = e.currentTarget.dataset.id;
+    var than = this;
+    wx.navigateTo({
+      url: '/page/article/article?id=' + id
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -40,9 +47,9 @@ Page({
     request({
       url: '/getArticleTypeTitleInfo/' + index,
       success: function(res) {
-        var imgsrc = res.imgSrc;
+        var imgsrc = res.data.data.imgSrc;
         var font = 1;
-        var title = res.title;
+        var title = res.data.data.title;
         that.setData({
           limitRemaining: font + '天前',
           newImgSrc: imgsrc,

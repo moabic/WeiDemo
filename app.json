@@ -1,8 +1,11 @@
 {
   "pages": [
+    
     "page/list/index",
     "page/type/type",
+    "page/article/article",
     "page/inside/index",
     "page/index/index"
+    
   ]
 }

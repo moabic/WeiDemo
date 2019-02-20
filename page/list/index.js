@@ -56,7 +56,6 @@ Page({
     wx.request({
       url: 'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/home',
       success: function(res) {
-        console.log(res.data.articleList[0].articleImgSrc)
         self.setData({
           recommend: res.data.recommend,
           markType: res.data.markType,

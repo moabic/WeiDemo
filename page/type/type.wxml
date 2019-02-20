@@ -13,7 +13,7 @@
             </view>
         </view>
     </view>
-    <view class="second-block" wx:for="{{articleList}}" wx:key="">
+    <view class="second-block" wx:for="{{articleList}}" wx:key="" bind:tap="jumpArticle" data-id="{{item.id}}">
         <view class="second-top">
             <image src="{{imgSrc}}" class="second-log" />
             <text class="second-title">pull等{{item.markCount}}人关注了</text>
