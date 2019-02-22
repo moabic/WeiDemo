@@ -8,21 +8,50 @@
         <text class="time"> {{time}}</text>
     </view>
     <view >
-        <video class="video" id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" >
+    <!-- 轮播图 -->
+            <swiper wx:if="{{res.data.banner[0]}}" class="banner" indicator-dots="true" autoplay="true" circular="true" interval="2000">
+                <swiper-item wx:for="{{src}}">
+                    <image src="{{item}}" />
+                </swiper-item>
+            </swiper>
+    <!-- 音频播放 -->
+        <view class="audio-content" wx:elif="{{res.data.audio.src}}">
+            <view class="audio-left" bind:tap="clickAudio">
+                <image class="bofang" src="/image/bofang.jpg"  wx:if="{{playandPause}}"/>
+                <image class="zanting" src="/image/zanting.jpg"  wx:else="{{playandPause}}"/>
+            </view>
+            <view class="audio-right" >
+                <view >
+                    <text class="audio-title">{{title}}</text>
+                </view>
+                <view >
+                    <text class="audio-form">来自{{author}}</text>
+                </view>
+                <view class="audio-progress">
+                    <progress percent="{{percent}}" style="width: {{progressWidth + 'rpx'}}"/>
+                    <view   bind:touchstart="touchstart"
+                            bind:touchmove="touchmove" 
+                            class="progress-radius" style="left: {{progerssLeft + 'rpx'}}"></view>
+                </view>
+                
+                <view class="progress-time">
+                    <text class="startingTime">{{format(audioCurrentTime)}}</text>
+                    <text class="endTime">{{format(audioDuration)}}</text>
+                </view>
+            </view>
+        </view>
+
+        <!-- 视频播放 -->
+        <video class="video" id="myVideo" src="{{res.data.video.src}}"  wx:elif="{{res.data.video.src}}">
             <cover-view wx:if="{{videoBloon}}"  class="coverWrapper">
-                <cover-image src="http://img.soogif.com/9KBJkggZhYYnTHtCgrqlC7iIaQx8MyXn.gif_s400x0" class="coverImageCat"></cover-image>
+                <cover-image src="{{res.data.video.poster}}" class="coverImageCat"></cover-image>
                 <cover-view class="coverContent" bind:tap="videoTap">
                     <cover-image class="coverstaues" src="/image/shoucang.jpg"></cover-image>
-                    <cover-view class="coverText">10""</cover-view>
+                    <cover-view class="coverText">{{res.data.video.duration}}</cover-view>
                 </cover-view>
             </cover-view>
-
         </video>
-        <!-- <swiper class="banner" indicator-dots="true" autoplay="true" circular="true" interval="2000">
-            <swiper-item wx:for="{{src}}">
-                <image src="{{item}}" />
-            </swiper-item>
-        </swiper> -->
+        
     </view>
     <view >
         <text class="article" decode="{{true}}">{{filter(article)}}</text>
@@ -41,4 +70,14 @@
         return text.replace(reg,'\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
     }
     module.exports = filter;
+</wxs>
+<wxs module="format">
+    function format(time) {
+        var minute = Math.floor(time / 60);
+        var second = time % 60
+        minute = minute < 10 ? '0' + minute : minute;
+        second = second < 10 ? '0' + second : second;
+        return minute + ':' + second
+    }
+    module.exports = format
 </wxs>
